@@ -1,0 +1,36 @@
+editor/ide
+
+node js
+
+npm create vite@latest .	". because we want it to be installed in current working directory"
+
+npm install kaboom
+
+clear some non needed files
+
+create src folder to store our source files
+
+create vite.config.js		"this is needed as the default vite config has some bugs in it" "this bundler compiles the js into web supported js as it is"
+
+in vite.config.js we specify base: "./" and build as minify: "terser"
+
+npm install terser		"minify"
+
+npm -D install terser		"install it as dependency in package.json"
+
+src folder contains main.js
+
+and kaboomCtx.js		"initialize k variable as kaboom in kaboomCtx.js and give in the canvas id which is created in index.html"
+
+create constants.js in src	"it will contain all the constants of the project"
+
+create utils.js in src		"utilities file"
+
+get some files in public folder like monogram.ttf, spritesheet.png, map.json, map.png
+
+in main.js set up the load of sprite and sliceX and Y.
+
+
+
+
+
