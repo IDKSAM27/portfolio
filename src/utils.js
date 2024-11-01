@@ -15,7 +15,7 @@ export function displayDialogue(text, onDisplayEnd){ //onDisplayEnd is the funct
         }
 
         clearInterval(intervalRef);
-    }, 5); //this function in executed every 5 seconds
+    }, 1); //this function in executed every 5 seconds
     //I have named or set a var to setInterval so that it could be cleared using clearInterval
 
     const closeBtn = document.getElementById("close");

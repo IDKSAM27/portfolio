@@ -88,6 +88,18 @@ in displaydialogue function setInterval is used, which we run at the interval of
 
 in utils.js worked on close button, which clears the dialoguebox when clicked, and sets the dialogueUI.style.display back to none.
 
+worked on spawnpoint in main.js
+
+next would be updating the camera to focus on the player and to be static(use k.onUpdate and (k.camPos())
+
+a little change in k.scene, const map , where it was k.make but it should have been k.add
+same in k.scene, const player it should have been k.add
+
+may need to fiddle around with the scaleFactor to get the dimension of the world in the website correct, p.s., always make sure the dimensions are feasible even in mobile phones, which can be done in inspect tab on any website.
+
+
+
+
 
 
 

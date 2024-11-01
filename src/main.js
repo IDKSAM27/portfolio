@@ -38,7 +38,7 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         k.scale(scaleFactor),
     ]);
 
-    const player = k.add([ //before, it was make, hence the player was not visible, now changed to add
+    const player = k.make([ //before, it was make, hence the player was not visible, now changed to add
         k.sprite("spritesheet", {anim: "idle-down"}),
         k.area({
             //this shape will a create a collision layer for the sprite.
@@ -52,11 +52,12 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         k.scale(scaleFactor),
         //the below vars can be accessed by ex. (player.speed)
         {
-            speed: 250,
+            speed: 350,
             direction: "down",
             isInDialogue: false, //make sure that player don't move while in dialogue box until press close button
         },
         "player", //when you want to check for collision, it lets you know ,yes this collided with that
+        // {z:2}
     ]);
 
     for(const layer of layers){
@@ -96,7 +97,14 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
     }
 
     k.onUpdate(() => {
-        k.camPos(player.pos.x, player.pos.y + 100)
+        k.camPos(player.pos.x, player.pos.y + 100);
+    });
+
+    k.onMouseDown((mouseBtn) => {
+        if (mouseBtn !== "left" || player.isInDialogue) return;
+
+        const worldMousePos = k.toWorld(k.mousePos()); //if we use only mousePos() we will get stuck eventually, that's why we use k.toWorld
+        player.moveTo(worldMousePos, player.speed); //TODO: read about worldMousePos
     });
 }); 
 
