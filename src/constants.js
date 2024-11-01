@@ -1,0 +1,1 @@
+export const scaleFactor = 4; // we will increase it 4 times

@@ -30,6 +30,65 @@ get some files in public folder like monogram.ttf, spritesheet.png, map.json, ma
 
 in main.js set up the load of sprite and sliceX and Y.
 
+save the map.json and map.png in the public folder which will be created using tiled application.
+
+go through map.json, understand the file a little bit, it's easy, make sure to name the boundary accordingly(ex: bed, pc, sofa, table, etc)
+
+go to main.js set background, set scene, before setting scene set k.go() function which goes to main everytime
+
+in k.scene in main.js we use async function
+(bcs
+Synchronous Functions:
+1.Execute line-by-line in a blocking manner.
+2.Each line waits for the previous one to complete before moving to the next.
+3.If a synchronous function encounters a time-consuming task (like a large loop or data processing), it will block the execution of subsequent code until it finishes.
+and 
+Asynchronous Functions:
+1.Execute in a non-blocking manner.
+2.When an asynchronous function encounters a time-consuming task, it can "pause" and let other code execute while waiting for the task to complete.
+3.Asynchronous functions often involve promises or callbacks to manage code that doesn’t execute immediately, like fetching data from an API.)
+
+
+aspect			sync			async
+------------------------------------------------------------------------------------------
+Execution		Blocking		Non-Blocking
+
+Main Thread		Block until		Does not block, continues with other code
+			task is complete
+
+Complexity		Simple			More complex, uses promises or async/await
+
+Use Case		Quick, CPU-bound tasks	I/O bound tasks, like fetching data
+
+Error Handling		try...catch		.catch() with promises, try...catch with 
+						async/await.
+------------------------------------------------------------------------------------------
+
+in.scene we fetch the map data and use await while fetching the data, if await not used, the rest of the code will continue to run before fetching. but we want the map to be loaded and then the rest of the code to be continued.
+
+also convert the mapData into .json while fetching the map data itself
+
+create const layers in main.js
+
+create our first game object, const map.(two ways to create obj i.e., make and add, diff in the comments).
+
+create player object in main.js.
+
+a for(const layer of layers) to provide the nature of the layers
+
+in this for loop we make the boundaries a physics obj or collision obj and a dialoguebox to shown when our player collides with our named objects like pc, sofa, bed, table, etc.
+
+in index.html, we created ui, all the texts, dialogue box to be shown are been added 
+
+in index.html itself, create styling for the things mentioned above.
+
+
+
+
+
+
+
+
 
 
 
