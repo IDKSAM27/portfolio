@@ -1,5 +1,6 @@
 import { scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
+import { displayDialogue } from "./utils";
 
 //The width of the spritesheet.png is 624 pixels and each block is 16 px, so simply divide and you'll get 39
 //Same formula for slixeY, 496 px and each block 16 px, we get 31
@@ -30,14 +31,14 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
 
     // our first game object = contains diff components, like sprite layers and stuff.
     // two ways to create game objects: make and add, make will create an obj but not display, add will create and display
-    const map = k.make([
+    const map = k.add([     //use add, which displays the map, before it was make!
         k.sprite("map"), // we give key to sprite, the key "map" is set in loadSprite.
         k.pos(0),
         //create a scaleFactor constant in constants.js
         k.scale(scaleFactor),
     ]);
 
-    const player = k.make([
+    const player = k.add([ //before, it was make, hence the player was not visible, now changed to add
         k.sprite("spritesheet", {anim: "idle-down"}),
         k.area({
             //this shape will a create a collision layer for the sprite.
@@ -73,12 +74,30 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
                 if(boundary.name){
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
-                        // TODO:
+                        displayDialogue("TODO", () => (player.isInDialogue = false)) //set it to false so the player can move again
                     })
+                }
+            }
+            continue;
+        }
+
+        if (layer.name === "spawnpoint") {
+            for(const entity of layer.objects){
+                if(entity.name === "player"){
+                    player.pos = k.vec2(    //acces the pos which was empty above in the code
+                       (map.pos.x + entity.x) * scaleFactor,
+                       (map.pos.y + entity.y) * scaleFactor
+                    );
+                    k.add(player);
+                    continue;
                 }
             }
         }
     }
+
+    k.onUpdate(() => {
+        k.camPos(player.pos.x, player.pos.y + 100)
+    });
 }); 
 
-k.go("main"); //
+k.go("main"); //goes to main

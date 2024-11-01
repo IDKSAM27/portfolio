@@ -82,6 +82,12 @@ in index.html, we created ui, all the texts, dialogue box to be shown are been a
 
 in index.html itself, create styling for the things mentioned above.
 
+now in utils.js complete the displayDialogue function.
+
+in displaydialogue function setInterval is used, which we run at the interval of 5 secs and clearInterval, and add the appropriate text in the dialoguebox
+
+in utils.js worked on close button, which clears the dialoguebox when clicked, and sets the dialogueUI.style.display back to none.
+
 
 
 
