@@ -97,6 +97,20 @@ same in k.scene, const player it should have been k.add
 
 may need to fiddle around with the scaleFactor to get the dimension of the world in the website correct, p.s., always make sure the dimensions are feasible even in mobile phones, which can be done in inspect tab on any website.
 
+changed the map unto my convenience, I will have to figure out how the get the character behind a particular block or object like the windmill and trees.
+
+work on the logic for scaling the camera, initially we scaled up the map but now we work on the camera scale, 
+
+in the above logic we use resizefactor which is width/height of the camera, this logic or function will be lodged in utils.js and we will call it at 2 instances in main.js, once in the beginning(after the for(const layer of layers) loop) and another after the initial, whenever we resize the window or camera.
+
+this above logic will help in maintaining the aesthetic look of the website even upon resizing or using it in mobile phones, etc.
+
+to know whether the window has been resized we use a inbuilt function called k.onResize().
+
+now to create turning, walking animation of the player, get the mouse angle in onMouseDown() function. and also set upperbound and lowerbound in the same function.
+
+
+
 
 
 

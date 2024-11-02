@@ -1,6 +1,6 @@
 import { scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
-import { displayDialogue } from "./utils";
+import { displayDialogue, setCamScale } from "./utils";
 
 //The width of the spritesheet.png is 624 pixels and each block is 16 px, so simply divide and you'll get 39
 //Same formula for slixeY, 496 px and each block 16 px, we get 31
@@ -52,7 +52,7 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         k.scale(scaleFactor),
         //the below vars can be accessed by ex. (player.speed)
         {
-            speed: 350,
+            speed: 650,
             direction: "down",
             isInDialogue: false, //make sure that player don't move while in dialogue box until press close button
         },
@@ -96,6 +96,12 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         }
     }
 
+    setCamScale(k);
+
+    k.onResize(() => {
+        k.camPos(player.pos.x, player.pos.y + 100);
+    });
+
     k.onUpdate(() => {
         k.camPos(player.pos.x, player.pos.y + 100);
     });
@@ -105,6 +111,33 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
 
         const worldMousePos = k.toWorld(k.mousePos()); //if we use only mousePos() we will get stuck eventually, that's why we use k.toWorld
         player.moveTo(worldMousePos, player.speed); //TODO: read about worldMousePos
+
+        const mouseAngle = player.pos.angle(worldMousePos);
+
+        const lowerBound = 50;
+        const upperBound = 125;
+
+        if( //plays moving up anim when char walks up
+            mouseAngle > lowerBound &&
+            mouseAngle < upperBound &&
+            player.curAnim() !== "walk-up" //TODO: try to remove this line.
+
+        ) {
+            player.play("walk-up");
+            player.direction = "up";
+            return;
+        }
+
+        if( //plays moving down anim when char walks down
+            mouseAngle > -upperBound &&
+            mouseAngle < -lowerBound &&
+            player.curAnim() !== "walk-down"
+        ) {
+            player.play("walk-down");
+            player.direction = "down";
+            return;
+        }
+
     });
 }); 
 
