@@ -1,4 +1,4 @@
-import { scaleFactor } from "./constants";
+import { dialogueData, scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
 import { displayDialogue, setCamScale } from "./utils";
 
@@ -52,7 +52,7 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         k.scale(scaleFactor),
         //the below vars can be accessed by ex. (player.speed)
         {
-            speed: 650,
+            speed: 350,
             direction: "down",
             isInDialogue: false, //make sure that player don't move while in dialogue box until press close button
         },
@@ -75,7 +75,7 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
                 if(boundary.name){
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
-                        displayDialogue("TODO", () => (player.isInDialogue = false)) //set it to false so the player can move again
+                        displayDialogue(dialogueData[boundary.name], () => (player.isInDialogue = false)) //set it to false so the player can move again
                     })
                 }
             }
@@ -138,6 +138,38 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
             return;
         }
 
+        if(Math.abs(mouseAngle) > upperBound) {
+            player.flipX = false;
+            if(player.curAnim() !== "walk-side") {
+                player.play("walk-side");
+            }
+            player.direction = "right";
+            return;
+        }
+
+        if(Math.abs(mouseAngle) < lowerBound) {
+            player.flipX = true;
+            if(player.curAnim() !== "walk-side") {
+                player.play("walk-side");
+            }
+            player.direction = "left";
+            return;
+        }
+
+
+    });
+
+    k.onMouseRelease(() => {
+        if(player.direction === "down") {
+            player.play("idle-down");
+            return;
+        }
+        if(player.direction === "up") {
+            player.play("idle-up");
+            return;
+        }
+
+        player.play("idle-side")
     });
 }); 
 
