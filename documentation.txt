@@ -109,9 +109,9 @@ to know whether the window has been resized we use a inbuilt function called k.o
 
 now to create turning, walking animation of the player, get the mouse angle in onMouseDown() function. and also set upperbound and lowerbound in the same function.
 
+setup walk-up walk-down and walk-side animation and also reset to static anim when the player gets static again
 
-
-
+to set the char anim or reset the anim to static in the direction it is when the mouse button is release, I created another function parallel to k.onMouseDown, named, k.onMouseRelease.
 
 
 
