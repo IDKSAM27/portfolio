@@ -1,5 +1,6 @@
 {
   "name": "actual-2d-portfolio",
+  "homepage": "https://idksam27.github.io/2d-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +14,7 @@
     "vite": "^5.4.10"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "kaboom": "^3000.1.17"
   }
 }
