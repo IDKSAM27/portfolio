@@ -113,15 +113,4 @@ setup walk-up walk-down and walk-side animation and also reset to static anim wh
 
 to set the char anim or reset the anim to static in the direction it is when the mouse button is release, I created another function parallel to k.onMouseDown, named, k.onMouseRelease.
 
-
-
-
-
-
-
-
-
-
-
-
-
+=================================================================================================================================================================================
