@@ -172,5 +172,5 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
         player.play("idle-side")
     });
 }); 
-
+// quite important
 k.go("main"); //goes to main
