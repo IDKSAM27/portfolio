@@ -2,7 +2,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-    base: "./2d-portfolio", // usually the base should be the github repo name. (eg. 2d-portfolio)
+    base: "./", // usually the base should be the github repo name. (eg. 2d-portfolio)
     build: {
         minify: "terser",
     },
