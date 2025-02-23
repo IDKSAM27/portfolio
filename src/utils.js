@@ -42,11 +42,10 @@ export function setCamScale(k) {
 }
 
 export function setupExitButton() {
-    const exitButton = document.querySelector(".exitnote");
-    if (exitButton) {
-        exitButton.addEventListener("click", () => {
-            //window.location.href = "index.html"; 
-            location.reload();
-        });
-    }
+    const exitButton = document.querySelector(".exitbutton");
+    
+    exitButton.addEventListener("click", () => {
+        location.reload(); // Reloads the page
+    });
 }
+
