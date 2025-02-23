@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <script type="module" crossorigin src="./assets/index-D-XQcG_q.js"></script>
+    <script type="module" crossorigin src="/portfolio/assets/index-hQpvMzbk.js"></script>
   </head>
   <body>
     <style>
@@ -57,6 +57,19 @@
         border-radius: 3px;
         padding: 1rem;
         font-size: inherit;
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Hover Effect */
+      .ui-close-btn:hover {
+          background-color: #ff6b7d; /* Lighter red on hover */
+          transform: scale(1.1); /* Slight zoom effect */
+      }
+
+      /* Active (Click) Effect */
+      .ui-close-btn:active {
+          background-color: #d13a4a; /* Darker red */
+          transform: scale(1); /* Reset zoom */
       }
 
       .btn-container {
@@ -72,10 +85,45 @@
         flex-direction: column;
         color: rgb(238, 238, 238);
       }
+
+      .exitbutton {
+        position: absolute;
+        left: 5%;
+        top: 6vh;
+        display: flex;
+        flex-direction: column;
+    
+        /* Button Styling */
+        background-color: #ff4b5c; /* Stylish red color */
+        color: white; /* Text color */
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px; /* Rounded corners */
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Hover Effect */
+      .exitbutton:hover {
+          background-color: #ff6b7d; /* Lighter red on hover */
+          transform: scale(1.1); /* Slight zoom effect */
+      }
+
+      /* Active (Click) Effect */
+      .exitbutton:active {
+          background-color: #d13a4a; /* Darker red */
+          transform: scale(1); /* Reset zoom */
+      }
+
+
     </style>
     <div id="app">
       <div> <!--it didn't had any class or id-->
         <p class="note">Tap/Click to move!</p>
+        <button class="exitbutton">Exit</button>
 
         <div id="textbox-container" style="display: none">
           <div id="textbox"> <!--it had an id not a class-->
