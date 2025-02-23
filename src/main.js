@@ -1,3 +1,5 @@
+import { setupExitButton } from "./utils.js";
+
 import { dialogueData, scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
 import { displayDialogue, setCamScale } from "./utils";
@@ -171,6 +173,12 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
 
         player.play("idle-side")
     });
+    
+    document.addEventListener("DOMContentLoaded", setupExitButton);
 }); 
+
+
+
+
 // quite important
 k.go("main"); //goes to main

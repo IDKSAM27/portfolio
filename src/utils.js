@@ -28,7 +28,7 @@ export function displayDialogue(text, onDisplayEnd){ //onDisplayEnd is the funct
         closeBtn.removeEventListener("click", onCloseBtnClick);
     }
 
-    closeBtn.addEventListener("click", onCloseBtnClick);
+    closeBtn.addEventListener("click", onCloseBtnClick);  
 }
 
 export function setCamScale(k) {
@@ -39,4 +39,14 @@ export function setCamScale(k) {
     }
 
     k.camScale(k.vec2(1.3));
+}
+
+export function setupExitButton() {
+    const exitButton = document.querySelector(".exitnote");
+    if (exitButton) {
+        exitButton.addEventListener("click", () => {
+            //window.location.href = "index.html"; 
+            location.reload();
+        });
+    }
 }
