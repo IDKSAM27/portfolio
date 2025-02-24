@@ -41,7 +41,7 @@ export function setCamScale(k) {
     k.camScale(k.vec2(1.3));
 }
 
-export function setupExitButton() {
+export function setupExitButton() { // The exit button
     const exitButton = document.querySelector(".exitbutton");
     
     exitButton.addEventListener("click", () => {

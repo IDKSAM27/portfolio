@@ -26,6 +26,9 @@ k.setBackground(k.Color.fromHex("#311047"));
 //this creates a scene, a code which is going to run, before doing that specify k.go() function.
 //by default it goes to main
 k.scene("main", async() => { //async is used bcs we will be getting map data using fetch call
+    // Show dialogue box on page load
+    displayDialogue("Welcome to the game! Click to move around.", () => {});
+
     const mapData = await(await fetch("./map.json")).json() //if await not used, the rest of the code will continue to run before fetching.
     
     const layers = mapData.layers; //load or eccess layers 
