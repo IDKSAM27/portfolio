@@ -31,6 +31,35 @@ export function displayDialogue(text, onDisplayEnd){ //onDisplayEnd is the funct
     closeBtn.addEventListener("click", onCloseBtnClick);  
 }
 
+// export function displayDialogue(text, onDisplayEnd, autoClose = false) { 
+//     const dialogueUI = document.getElementById("textbox-container");
+//     const dialogue = document.getElementById("dialogue");
+//     const closeBtn = document.getElementById("close");
+
+//     dialogueUI.style.display = "block";
+//     dialogue.innerHTML = text;
+
+//     let timeoutRef;
+//     if (autoClose) {
+//         timeoutRef = setTimeout(() => {
+//             onCloseBtnClick(); // Close only the initial dialogue box
+//         }, 3000);
+//     }
+
+//     function onCloseBtnClick() {
+//         onDisplayEnd();
+//         dialogueUI.style.display = "none";
+//         dialogue.innerHTML = "";
+//         if (autoClose) {
+//             clearTimeout(timeoutRef);
+//         }
+//         closeBtn.removeEventListener("click", onCloseBtnClick);
+//     }
+
+//     closeBtn.addEventListener("click", onCloseBtnClick);  
+// }
+
+
 export function setCamScale(k) {
     const resizeFactor = k.width() / k.height();
     if(resizeFactor < 1) {
