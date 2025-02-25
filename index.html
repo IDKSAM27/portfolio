@@ -143,6 +143,18 @@
       </div>
       <canvas id="game"></canvas>
     </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          if (window.location.hash === "#landing") {
+              window.location.href = "landing.html";
+          }
+      });
+    </script>
+  
+
+
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
