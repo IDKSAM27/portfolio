@@ -32,7 +32,7 @@ k.scene("main", async() => { //async is used bcs we will be getting map data usi
 
     // Show dialogue box on page load
     setTimeout(() => {
-        displayDialogue("Welcome to the game! Click to move around.", () => {});
+        displayDialogue("Welcome Human! (or Machine) Click to move around.", () => {});
     }, 500); // 500ms delay
     
 

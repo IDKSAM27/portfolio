@@ -10,5 +10,5 @@ export const dialogueData = {
     projects: `Visit my <a href="https://github.com/idksam27" target="_blank">Github profile</a>`,
     library: ``,
     bed: `This is where I think, and sometimes sleep.`,
-    exit: `Exit`,
+    exit: `Click Exit button to visit my portfolio.`,
 } 
