@@ -74,7 +74,8 @@ export function setupExitButton() { // The exit button
     const exitButton = document.querySelector(".exitbutton");
     
     exitButton.addEventListener("click", () => {
-        location.reload(); // Reloads the page
+        // location.reload(); // Reloads the page
+        window.location.href = "portfolio/land.html"
     });
 }
 
