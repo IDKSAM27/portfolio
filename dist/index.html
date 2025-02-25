@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script type="module" crossorigin src="/portfolio/assets/index-lwoWgm2r.js"></script>
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: monogram;
+        src: url(monogram.ttf);
+      }
+
+      body {
+        font-family: monogram, monospace;
+        font-size: 2rem;
+        overflow: hidden;
+      }
+
+      #app {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      #textbox {
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        bottom: 2vh;
+        min-height: 10vh;
+        background: white;
+        border-radius: 3px;
+        outline-style: solid;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        word-spacing: 0.2rem;
+        filter: drop-shadow(0 0 0.75rem rgb(112, 112, 112));
+        /* overflow: auto; */
+      }
+
+      .ui-text {
+        margin: 0;
+        user-select: none;
+      }
+
+      .ui-close-btn {
+        font-family: monogram, monospace;
+        border-style: none;
+        border-radius: 3px;
+        padding: 1rem;
+        font-size: inherit;
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Hover Effect */
+      .ui-close-btn:hover {
+          background-color: #ff6b7d; /* Lighter red on hover */
+          transform: scale(1.1); /* Slight zoom effect */
+      }
+
+      /* Active (Click) Effect */
+      .ui-close-btn:active {
+          background-color: #d13a4a; /* Darker red */
+          transform: scale(1); /* Reset zoom */
+      }
+
+      .btn-container {
+        align-self: flex-end;
+        margin-top: 1rem;
+      }
+
+      .note {
+        position: absolute;
+        left: 5%;
+        top: 1vh;
+        display: flex;
+        flex-direction: column;
+        color: rgb(238, 238, 238);
+        white-space: nowrap; /* Prevent text from wrapping */
+        display: inline-block; /* Keep it inline */
+      }
+
+      .exit-container {
+        display: flex;
+        flex-direction: column; /* Stack text and button vertically */
+        align-items: center; /* Center items */
+        position: absolute;
+        left: 5%;
+        top: 2vh; /* Adjust as needed */
+      }
+
+      .exitbutton {
+          margin-top: 1px; /* Ensure spacing between text and button */
+          background-color: #ff4b5c; /* Stylish red color */
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 8px;
+          cursor: pointer;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          transition: all 0.2s ease-in-out;
+      }
+
+      /* Hover Effect */
+      .exitbutton:hover {
+          background-color: #ff6b7d;
+          transform: scale(1.1);
+      }
+
+      /* Active (Click) Effect */
+      .exitbutton:active {
+          background-color: #d13a4a;
+          transform: scale(1);
+      }
+
+
+
+    </style>
+    <div id="app">
+      <div> <!--it didn't had any class or id-->
+        <div class="exit-container">
+          <!-- <p class="note">Tap/Click to move!</p> -->
+          <button class="exitbutton">Exit</button>
+        </div>
+
+        <div id="textbox-container" style="display: none">
+          <div id="textbox"> <!--it had an id not a class-->
+            <p id="dialogue" class="ui-text"></p>
+            <div class="btn-container">
+              <button id="close" class="ui-close-btn">Close</button> <!--the id was close and not close-btn-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas id="game"></canvas>
+    </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          if (window.location.hash === "#landing") {
+              window.location.href = "landing.html";
+          }
+      });
+    </script>
+  
+
+
+  </body>
+</html>

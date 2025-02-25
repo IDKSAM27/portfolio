@@ -76,7 +76,7 @@ export function setupExitButton() { // The exit button
     exitButton.addEventListener("click", () => {
         //location.reload(); // Reloads the page
         //window.location.href = "landing.html";
-        window.location.href = "#landing";
+        window.location.href = "/portfolio/landing.html";
         location.reload();
     });
 }
