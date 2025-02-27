@@ -77,7 +77,7 @@ export function setupExitButton() { // The exit button
         //location.reload(); // Reloads the page
         //window.location.href = "landing.html";
         window.location.href = "/portfolio/landing.html";
-        location.reload();
+        // location.reload();
     });
 }
 
