@@ -8,5 +8,4 @@ export default defineConfig({
     },
 });
 
-
 // Change the base directory

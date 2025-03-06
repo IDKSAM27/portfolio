@@ -59,7 +59,6 @@ export function displayDialogue(text, onDisplayEnd){ //onDisplayEnd is the funct
 //     closeBtn.addEventListener("click", onCloseBtnClick);  
 // }
 
-
 export function setCamScale(k) {
     const resizeFactor = k.width() / k.height();
     if(resizeFactor < 1) {
@@ -80,4 +79,3 @@ export function setupExitButton() { // The exit button
         // location.reload();
     });
 }
-
