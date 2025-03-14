@@ -145,9 +145,13 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-          if (window.location.hash === "#landing") {
-              window.location.href = "landing.html";
-          }
+      if (window.location.hash === "#redirect") {
+          window.location.href = "https://idksam27.github.io/";
+      }
+      });
+
+      document.querySelector(".exitbutton").addEventListener("click", () => {
+          window.location.href = "https://idksam27.github.io/";
       });
     </script>
   
