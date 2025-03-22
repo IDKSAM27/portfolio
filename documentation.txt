@@ -49,16 +49,16 @@ Asynchronous Functions:
 3.Asynchronous functions often involve promises or callbacks to manage code that doesn’t execute immediately, like fetching data from an API.)
 
 
-aspect			sync			async
+aspect				sync			async
 ------------------------------------------------------------------------------------------
-Execution		Blocking		Non-Blocking
+Execution			Blocking		Non-Blocking
 
-Main Thread		Block until		Does not block, continues with other code
-			task is complete
+Main Thread			Block until		Does not block, continues with other code
+					task is complete
 
-Complexity		Simple			More complex, uses promises or async/await
+Complexity			Simple			More complex, uses promises or async/await
 
-Use Case		Quick, CPU-bound tasks	I/O bound tasks, like fetching data
+Use Case			Quick, CPU-bound tasks	I/O bound tasks, like fetching data
 
 Error Handling		try...catch		.catch() with promises, try...catch with 
 						async/await.
