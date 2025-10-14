@@ -75,7 +75,7 @@ export function setupExitButton() { // The exit button
     exitButton.addEventListener("click", () => {
         //location.reload(); // Reloads the page
         //window.location.href = "landing.html";
-        window.location.href = "https://idksam27.github.io/";
+        window.location.href = "https://sampreetpatil.com/";
         // location.reload();
     });
 }
