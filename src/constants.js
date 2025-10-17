@@ -9,7 +9,7 @@ export const dialogueData = {
     
     "sofa-table": `I code, I don't watch TV, insta, shorts, some time youtube videos`,
     
-    resume: `Hey wanna check out my resume? <a href="https://sampreetpatil.com/resume" target="_blank">Here you go</a>!`,
+    resume: `Hey wanna check out my resume? <a href="https://sampreetpatil.com/resume.pdf" target="_blank">Here you go</a>!`,
     
     projects: `Visit my <a href="https://github.com/idksam27" target="_blank">Github profile</a>`,
     
